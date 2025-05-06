@@ -18,8 +18,10 @@ function createWindow() {
     mainWindow.loadURL("http://localhost:5173");
     mainWindow.webContents.openDevTools();
   } else {
-    console.log("Production mode - loading from dist/index.html");
-    mainWindow.loadFile(path.join(__dirname, "../../dist/index.html"));
+    console.log("Production mode - loading from out/renderer/index.html");
+    const rendererPath = path.join(process.resourcesPath, "app.asar", "out", "renderer", "index.html");
+    console.log(`Loading renderer from: ${rendererPath}`);
+    mainWindow.loadFile(rendererPath);
   }
   mainWindow.on("closed", function() {
     mainWindow = null;

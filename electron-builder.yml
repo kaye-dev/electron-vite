@@ -4,9 +4,7 @@ directories:
   output: build
   buildResources: assets
 files:
-  - dist/**/*
-  - src/main/**/*
-  - src/preload/**/*
+  - out/**/*
   - '!**/*.map'
 mac:
   category: public.app-category.developer-tools
