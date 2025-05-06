@@ -24,9 +24,14 @@
     "build:mac": "electron-vite build && electron-builder --mac --universal",
     "build:linux": "electron-vite build && electron-builder --linux"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["electron", "vite", "react", "typescript", "tailwindcss"],
+  "author": "kaye-dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaye-dev/electron-vite"
+  },
+  "homepage": "https://github.com/kaye-dev/electron-vite",
   "devDependencies": {
     "@babel/preset-env": "^7.27.1",
     "@babel/preset-react": "^7.27.1",

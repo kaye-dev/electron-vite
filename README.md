@@ -116,4 +116,4 @@ electron-vite/
 
 ## ライセンス
 
-ISC
+MIT
