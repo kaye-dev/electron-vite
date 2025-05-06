@@ -1,6 +1,8 @@
-module.exports = {
+import type { Config } from 'jest';
+
+const config: Config = {
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/renderer/$1',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
@@ -9,3 +11,5 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['@babel/preset-env', '@babel/preset-react'] }],
   },
 };
+
+export default config;

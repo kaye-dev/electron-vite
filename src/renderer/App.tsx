@@ -1,8 +1,21 @@
 import React from 'react';
 
-function App() {
+// electronAPIのウィンドウオブジェクトへのアクセスの型安全性を確保
+interface ElectronWindow extends Window {
+  electronAPI?: {
+    versions: {
+      electron: string;
+      node: string;
+      chrome: string;
+    }
+  }
+}
+
+const electronWindow = window as ElectronWindow;
+
+function App(): React.ReactElement {
   // electronAPIのバージョン情報を取得
-  const electronVersion = window.electronAPI?.versions?.electron || 'N/A';
+  const electronVersion = electronWindow.electronAPI?.versions?.electron || 'N/A';
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">

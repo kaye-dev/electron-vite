@@ -1,13 +1,13 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+import { app, BrowserWindow } from 'electron';
+import path from 'path';
 
 // 開発モードかどうかをチェック
-const isDev = process.env.NODE_ENV === 'development';
+const isDev: boolean = process.env.NODE_ENV === 'development';
 
 // メインウィンドウの参照をグローバルに持つ（GCで消されないように）
-let mainWindow;
+let mainWindow: BrowserWindow | null;
 
-function createWindow() {
+function createWindow(): void {
   // メインウィンドウを作成
   mainWindow = new BrowserWindow({
     width: 800,
