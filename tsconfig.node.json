@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": false,
+    "outDir": "dist/node",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "types": ["node"],
+    "paths": {
+      "@/*": ["src/renderer/*"]
+    }
+  },
+  "include": [
+    "src/main/**/*.ts",
+    "src/main/**/*.js",
+    "src/preload/**/*.ts",
+    "src/preload/**/*.js",
+    "electron.vite.config.*"
+  ]
+}

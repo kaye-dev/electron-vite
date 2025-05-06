@@ -1,0 +1,18 @@
+appId: com.example.electronvite
+productName: Electron Vite App
+directories:
+  output: build
+  buildResources: assets
+files:
+  - dist/**/*
+  - src/main/**/*
+  - src/preload/**/*
+  - '!**/*.map'
+mac:
+  category: public.app-category.developer-tools
+  icon: assets/icon.icns
+win:
+  icon: assets/icon.ico
+linux:
+  category: Development
+  icon: assets/icon.png
