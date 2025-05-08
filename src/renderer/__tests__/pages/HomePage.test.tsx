@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import HomePage from './HomePage';
+import HomePage from '../../pages/HomePage';
 
 // モックでelectronAPIを定義
 const mockElectronAPI = {

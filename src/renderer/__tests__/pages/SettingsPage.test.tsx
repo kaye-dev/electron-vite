@@ -1,19 +1,19 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import MyPage from './MyPage';
+import SettingsPage from '../../pages/SettingsPage';
 
-describe('MyPage component', () => {
+describe('SettingsPage component', () => {
   beforeEach(() => {
     render(
       <MemoryRouter>
-        <MyPage />
+        <SettingsPage />
       </MemoryRouter>
     );
   });
 
-  test('renders マイページ title', () => {
-    const titleElement = screen.getByText(/マイページ/i);
+  test('renders 設定 title', () => {
+    const titleElement = screen.getByText(/設定/i);
     expect(titleElement).toBeInTheDocument();
   });
 
@@ -23,9 +23,9 @@ describe('MyPage component', () => {
     expect(homePageLink.closest('a')).toHaveAttribute('href', '/');
   });
 
-  test('contains link to Settings', () => {
-    const settingsLink = screen.getByText(/設定へ/i);
-    expect(settingsLink).toBeInTheDocument();
-    expect(settingsLink.closest('a')).toHaveAttribute('href', '/settings');
+  test('contains link to MyPage', () => {
+    const myPageLink = screen.getByText(/マイページへ/i);
+    expect(myPageLink).toBeInTheDocument();
+    expect(myPageLink.closest('a')).toHaveAttribute('href', '/mypage');
   });
 });

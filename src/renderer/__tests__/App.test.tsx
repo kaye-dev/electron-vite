@@ -1,17 +1,17 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from '../App';
 
 // コンポーネントのモック
-jest.mock('./pages/HomePage', () => ({
+jest.mock('../pages/HomePage', () => ({
   __esModule: true,
   default: () => <div data-testid="home-page">Home Page</div>
 }));
-jest.mock('./pages/MyPage', () => ({
+jest.mock('../pages/MyPage', () => ({
   __esModule: true,
   default: () => <div data-testid="my-page">My Page</div>
 }));
-jest.mock('./pages/SettingsPage', () => ({
+jest.mock('../pages/SettingsPage', () => ({
   __esModule: true,
   default: () => <div data-testid="settings-page">Settings Page</div>
 }));
