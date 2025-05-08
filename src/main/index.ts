@@ -12,12 +12,15 @@ function createWindow(): void {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    titleBarStyle: 'hidden',
     webPreferences: {
       preload: path.join(__dirname, '../preload/index.js'),
       nodeIntegration: false,
       contextIsolation: true,
     },
   });
+  // ウィンドサイズを最大化表示する
+  mainWindow.maximize()
 
   // 開発モードの場合はローカルサーバーから読み込む
   if (isDev) {
