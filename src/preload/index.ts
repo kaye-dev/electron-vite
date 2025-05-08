@@ -1,4 +1,5 @@
-import { contextBridge, ipcRenderer } from 'electron';
+import { contextBridge } from 'electron';
+// import { ipcRenderer } from 'electron'; // 将来的に必要になったら復活させる
 
 // グローバルなelectronAPIの型定義
 interface ElectronAPI {

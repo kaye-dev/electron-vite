@@ -1,31 +1,19 @@
 import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import MyPage from './pages/MyPage';
+import SettingsPage from './pages/SettingsPage';
 
-// electronAPIのウィンドウオブジェクトへのアクセスの型安全性を確保
-interface ElectronWindow extends Window {
-  electronAPI?: {
-    versions: {
-      electron: string;
-      node: string;
-      chrome: string;
-    }
-  }
-}
-
-const electronWindow = window as ElectronWindow;
-
+// メインのAppコンポーネント
 function App(): React.ReactElement {
-  // electronAPIのバージョン情報を取得
-  const electronVersion = electronWindow.electronAPI?.versions?.electron || 'N/A';
-
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="p-8 bg-white rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-blue-600">Hello World</h1>
-        <p className="mt-2 text-gray-600">
-          Running on Electron {electronVersion}
-        </p>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+      </Routes>
+    </Router>
   );
 }
 
